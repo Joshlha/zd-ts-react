@@ -1,8 +1,8 @@
-const path = require('path')
-const { CleanWebpackPlugin } = require('clean-webpack-plugin')
-const CopyWebpackPlugin = require('copy-webpack-plugin')
-const MiniCssExtractPlugin = require('mini-css-extract-plugin')
-const HtmlWebpackPlugin = require('html-webpack-plugin')
+import { resolve as _resolve, join } from 'path'
+import { CleanWebpackPlugin } from 'clean-webpack-plugin'
+import CopyWebpackPlugin from 'copy-webpack-plugin'
+import MiniCssExtractPlugin from 'mini-css-extract-plugin'
+import HtmlWebpackPlugin from 'html-webpack-plugin'
 
 const externalAssets = {
   js: [
@@ -10,21 +10,21 @@ const externalAssets = {
   ]
 }
 
-module.exports = {
+const config = {
   entry: {
     app: [
-      './src/javascripts/locations/ticket_sidebar.js',
+      './src/javascripts/locations/ticket_sidebar.ts',
       './src/index.css'
     ]
   },
   output: {
     filename: '[name].js',
-    path: path.resolve(__dirname, 'dist/assets')
+    path: _resolve(__dirname, 'dist/assets')
   },
   module: {
     rules: [
       {
-        test: /\.(?:js|jsx)$/,
+        test: /\.(?:ts|tsx)$/,
         exclude: /node_modules/,
         loader: 'babel-loader',
         options: {
@@ -41,16 +41,14 @@ module.exports = {
       }
     ]
   },
-
   resolve: {
-    extensions: ['', '.js', '.jsx'],
+    extensions: ['', '.ts', '.tsx', '.js', '.jsx']
   },
-
   plugins: [
     // Empties the dist folder
     new CleanWebpackPlugin({
       verbose: true,
-      cleanOnceBeforeBuildPatterns: [path.join(process.cwd(), 'dist/**/*')]
+      cleanOnceBeforeBuildPatterns: [join(process.cwd(), 'dist/**/*')]
     }),
 
     // Copy over static assets
@@ -73,3 +71,5 @@ module.exports = {
     })
   ]
 }
+
+export default config
