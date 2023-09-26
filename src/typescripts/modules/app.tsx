@@ -2,6 +2,7 @@
  *  Example app
  **/
 import React from 'react'
+// eslint-disable-next-line react/no-deprecated
 import { render } from 'react-dom'
 import { ThemeProvider, DEFAULT_THEME } from '@zendeskgarden/react-theming'
 import { Grid, Row, Col } from '@zendeskgarden/react-grid'
@@ -14,6 +15,9 @@ const API_ENDPOINTS = {
 }
 
 class App {
+  _client: any
+  initializePromise: Promise<any>
+
   constructor (client, _appData) {
     this._client = client
 
@@ -25,14 +29,14 @@ class App {
   /**
    * Initialize module, render main template
    */
-  async init () {
+  async init (): Promise<any> {
     const currentUser = (await this._client.get('currentUser')).currentUser
 
     const organizationsResponse = await this._client
       .request(API_ENDPOINTS.organizations)
       .catch(this._handleError.bind(this))
 
-    const organizations = organizationsResponse ? organizationsResponse.organizations : []
+    const organizations = organizationsResponse != null ? organizationsResponse.organizations : []
 
     const appContainer = document.querySelector('.main')
 
@@ -46,7 +50,7 @@ class App {
           </Row>
           <Row>
             <Col>
-              <span>default.organizations':</span>
+              <span>default.organizations:</span>
               <UnorderedList data-test-id='organizations'>
                 {organizations.map(organization => (
                   <UnorderedList.Item key={`organization-${organization.id}`} data-test-id={`organization-${organization.id}`}>
@@ -60,14 +64,14 @@ class App {
       </ThemeProvider>,
       appContainer
     )
-    return resizeContainer(this._client, MAX_HEIGHT)
+    return await resizeContainer(this._client, MAX_HEIGHT)
   }
 
   /**
    * Handle error
    * @param {Object} error error object
    */
-  _handleError (error) {
+  _handleError (error): void {
     console.log('An error is handled here: ', error.message)
   }
 }
