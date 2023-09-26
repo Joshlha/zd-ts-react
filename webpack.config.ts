@@ -13,7 +13,7 @@ const externalAssets = {
 const config = {
   entry: {
     app: [
-      './src/javascripts/locations/ticket_sidebar.ts',
+      './src/typescripts/locations/ticket_sidebar.ts',
       './src/index.css'
     ]
   },
