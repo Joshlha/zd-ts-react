@@ -3,6 +3,7 @@ import { CleanWebpackPlugin } from 'clean-webpack-plugin'
 import CopyWebpackPlugin from 'copy-webpack-plugin'
 import MiniCssExtractPlugin from 'mini-css-extract-plugin'
 import HtmlWebpackPlugin from 'html-webpack-plugin'
+import type webpack from 'webpack'
 
 const externalAssets = {
   js: [
@@ -10,7 +11,7 @@ const externalAssets = {
   ]
 }
 
-const config = {
+const config: webpack.Configuration = {
   entry: {
     app: [
       './src/typescripts/locations/ticket_sidebar.ts',
