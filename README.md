@@ -17,11 +17,10 @@ git clone https://github.com/Joshlha/zd-ts-react.git .
 npm i
 ```
 4. If using VSCode, install the ESLint plugin for much better type checking and formatting/auto-fixing options.
-5. 
+5. Open two terminals and run the two commends below, one in each terminal.
 ```
 npm run watch
 ```
-Then in a different terminal
 ```
 npm run start
 ```
