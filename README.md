@@ -43,6 +43,6 @@ This code is a derivative of Zendesk's react app scaffold, found in [this github
 ## Changes from [app_scaffolds/packages/react](https://github.com/zendesk/app_scaffolds/tree/master/packages/react)
 1. This code derives only from the `/packages/react` folder in the derivative repo. All other code has been thrown out.
 2. ALL javascript has been changed to Typescript
-3. Necessary dependencies for Typescript have been added
+3. Necessary dependencies for Typescript have been added, including typescript packages for integration with other dependencies such as Webpack and Node.
 4. Dependencies used for localization have been removed.
 
