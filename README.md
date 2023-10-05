@@ -24,7 +24,7 @@ npm run watch
 ```
 npm run start
 ```
-6. FInally, navigate to a ticket in Zendesk and append `?zcli_apps=true` to the URL
+6. Finally, navigate to a ticket in Zendesk and append `?zcli_apps=true` to the URL
 
 ## Help
 If you have any issues getting this scaffold to work, feel free to open an issue on this repo. 
@@ -37,7 +37,7 @@ The scaffold is intended to be bare minimum. As such, there isn't a whole lot of
 One example of an additional feature would be having multiple app entrypoints, using multiple ZAFClients, etc.
 
 ## License
-This code is a derivative of Zendesk's react app scaffold, found in [this github repo](https://github.com/zendesk/app_scaffolds). As such, we are required to inform you of major changes made to the original codebase. This repository retains the license of of the reposity from which it is derived.
+This code is a derivative of Zendesk's react app scaffold, found in [this github repo](https://github.com/zendesk/app_scaffolds). As such, we are required to inform you of major changes made to the original codebase. This repository retains the license of the repository from which it is derived.
 
 ## Changes from [app_scaffolds/packages/react](https://github.com/zendesk/app_scaffolds/tree/master/packages/react)
 1. This code derives only from the `/packages/react` folder in the derivative repo. All other code has been thrown out.
