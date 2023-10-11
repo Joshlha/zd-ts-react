@@ -16,7 +16,7 @@ git clone https://github.com/Joshlha/zd-ts-react.git .
 ```
 npm i
 ```
-4. If using VSCode, install the ESLint plugin for much better type checking and formatting/auto-fixing options.
+4. If using VSCode, install the ESLint and Prettier plugins for much better type checking and formatting/auto-fixing options. You will also want to change your default formatter in VSCode to use prettier. You can do this by simply searching "defaultformatter" in the VSCode settings.
 5. Open two terminals and run the two commends below, one in each terminal.
 ```
 npm run watch
@@ -25,6 +25,12 @@ npm run watch
 npm run start
 ```
 6. Finally, navigate to a ticket in Zendesk and append `?zcli_apps=true` to the URL
+
+### Footnote
+You can run the formatter on all files in the src directory by running
+```
+npm run format
+```
 
 ## Help
 If you have any issues getting this scaffold to work, feel free to open an issue on this repo. 
